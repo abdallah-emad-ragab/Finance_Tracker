@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+::selection {
+    @apply bg-gray-500 text-white;
+}
+
+/* Transaction Form Styles */
+.transactionForm {
+    @apply bg-white p-4 grid grid-cols-1 md:grid-cols-2 gap-4 rounded-2xl shadow-md;
+}
+.transactionContainer {
+    @apply flex flex-col col-span-1 space-y-1;
+}
+.transactionLabel {
+    @apply text-sm font-medium text-gray-700;
+}
+.transactionFullWidth {
+    @apply col-span-1 md:col-span-2;
+}
+.transactionInput {
+    @apply w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+.transactionButton {
+    @apply w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700;
+}
