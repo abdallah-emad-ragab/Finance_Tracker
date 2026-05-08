@@ -1,14 +1,40 @@
-import useTransactionsSummary from "../../hooks/useTransactionsSummary.js";
+import useTransactionsSummary, { type Tsort } from "../../hooks/useTransactionsSummary.js";
 
 export default function TransactionsSummary() {
-    const { showModal, setShowModal, transactionIdToDelete, setTransactionIdToDelete, myTransactions, deleteTransaction } = useTransactionsSummary();
+    const { showModal, setShowModal, transactionIdToDelete, setTransactionIdToDelete, myTransactions, deleteTransaction, searchTerm, setSearchTerm, filterType, setFilterType, sortBy, setSortBy, filteredTransactions } = useTransactionsSummary();
 
     return (
         <div className="bg-white rounded-2xl shadow p-6">
             <h2 className="text-2xl font-bold mb-4">Transactions Summary</h2>
 
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                {/* Search */}
+                <input type="text" className="p-2 border rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+                    value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search transactions..." />
+                {/* Filter */}
+                <select className="p-2 border rounded-xl outline-none" value={filterType} onChange={(e) => setFilterType(e.target.value)}>
+                    <option value={"all"}>All Types</option>
+                    <option value={"income"}>Income Only</option>
+                    <option value={"outcome"}>Outcome Only</option>
+                </select>
+                {/* Sort */}
+                <select className="p-2 border rounded-xl outline-none" value={sortBy} onChange={(e) => setSortBy(e.target.value as Tsort)}>
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="highest">Highest Amount</option>
+                    <option value="lowest">Lowest Amount</option>
+                </select>
+            </div>
+
             <div className="space-y-4">
-                {myTransactions.map((transaction) => (
+                {myTransactions.length === 0 ? (
+                    <div className="flex flex-col items-center justify-center py-3">
+                        <i className="fa-solid fa-file-invoice-dollar text-3xl text-gray-300 mx-auto" />
+                        <p className="text-gray-500 text-center py-10">No transactions.</p>
+                    </div>
+                ) : filteredTransactions.length === 0 ? (
+                    <p className="text-gray-500 text-center py-10">No transactions match your search.</p>
+                ) : filteredTransactions.map((transaction) => (
                     <div key={transaction.id} className={`flex flex-col bg-gray-200 ${transaction.type === "income" ? "border-l-4 border-green-500" : "border-l-4 border-red-500"} p-4 my-2 rounded-2xl`}>
                         {/* Upper Row: Title, Amount, and Trash */}
                         <div className="flex justify-between items-center w-full">
