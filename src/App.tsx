@@ -2,6 +2,7 @@ import Header from "./components/Header/Header.js";
 import Summary from "./components/Summary/Summary.js";
 import TransactionForm from "./components/TransactionsForm/TransactionForm.js";
 import TransactionsSummary from "./components/TransactionsSummary/TransactionsSummary.js";
+import TransactionsChart from "./components/TransactionsChart/TransactionsChart.js";
 import { TransactionsProvider } from "./context/transactionsContext.js";
 import Footer from "./components/Footer/Footer.js";
 
@@ -14,6 +15,7 @@ function App() {
           <Summary />
           <TransactionForm />
           <TransactionsSummary />
+          <TransactionsChart />
           <Footer />
         </TransactionsProvider>
       </div>
