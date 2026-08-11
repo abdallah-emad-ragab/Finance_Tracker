@@ -24,19 +24,3 @@ A lightweight, efficient personal finance management app designed to help users 
 * **Styling:** Tailwind CSS
 * **State Management:** Context API
 * **Storage:** Browser `localStorage` API
-
----
-
-## 🚀 Getting Started
-
-Follow these instructions to run the application locally:
-
-### Prerequisites
-
-Ensure you have **Node.js** installed on your machine.
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/finance-tracker.git](https://github.com/your-username/finance-tracker.git)
