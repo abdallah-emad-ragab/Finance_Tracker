@@ -1,16 +1,42 @@
-# React + Vite
+# Finance Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, efficient personal finance management app designed to help users track their incomes and expenses, monitor spending habits through visual charts, and maintain local data persistence.
 
-Currently, two official plugins are available:
+![Finance Tracker Preview](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Income & Expense Tracking:** Easily record, categorize, and delete monetary transactions.
+* **Data Visualization:** Interactive charts to analyze spending patterns and financial breakdowns.
+* **State Management:** Built with **React Context API** for clean, predictable global state flow across components.
+* **Persistent Local Storage:** Automatically saves transaction data in the browser's `localStorage` so data stays safe across reloads.
+* **Fully Responsive UI:** Built with **Tailwind CSS** for a clean, accessible layout on mobile and desktop devices.
+* **Type Safety:** Written with **TypeScript** to ensure clean architecture and prevent runtime bugs.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+* **Framework:** React
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **State Management:** Context API
+* **Storage:** Browser `localStorage` API
+
+---
+
+## 🚀 Getting Started
+
+Follow these instructions to run the application locally:
+
+### Prerequisites
+
+Ensure you have **Node.js** installed on your machine.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/your-username/finance-tracker.git](https://github.com/your-username/finance-tracker.git)
